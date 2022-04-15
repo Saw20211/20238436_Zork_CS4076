@@ -1,7 +1,9 @@
 #include "sceneimg.h"
-#include "animationgif.h"
+#include "animationGif.h"
 #include <QLabel>
 
+
+//Scene animation for .gif
 sceneImg::sceneImg(QObject *parent)
     :QGraphicsScene(parent)
 {

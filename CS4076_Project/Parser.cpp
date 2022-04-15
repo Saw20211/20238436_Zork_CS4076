@@ -5,6 +5,7 @@ Parser::Parser() {
 }
 
 Parser::~Parser(){
+    std::cout << "destructor" <<std::endl;
     delete commands;
 }
 

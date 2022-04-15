@@ -3,16 +3,10 @@
 #include <QApplication>
 #include "ZorkUL.h"
 
-namespace random{
-    namespace function{
-    void print(const char* text)
-    {
-        std::cout << text << std::endl;
-    }
-    }
-    void print_again(){}
-}
-
+union Zor{
+    int siz;
+    float sal;
+};
 
 int main(int argc, char *argv[])
 {

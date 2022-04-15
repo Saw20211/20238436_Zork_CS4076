@@ -16,7 +16,7 @@ class sceneImg;
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
-    friend class Room; // friendship
+    friend class Room;
 
 
 public:

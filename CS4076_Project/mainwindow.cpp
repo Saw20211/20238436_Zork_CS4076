@@ -53,7 +53,8 @@ void MainWindow::moveToW(string direction)
 void MainWindow::moveToE(string direction)
 {
 
-        ui->gameText->setText("YOU WON! Check Your Terminal For a 'Secret Message'");
+
+        ui->gameText->setText("YOU HAVE FOUND THE ELDEN RING! Check Your Terminal For a 'Secret Message'");
 
 }
 
@@ -79,6 +80,22 @@ void stFriend(StankFist &low){
     cout << "The Item is in this room you won the " <<low.stinkyVar << "st elden ring!" << endl;
 
     cout << name << "You are now the elden lord" << endl;
+    //memory management
+int rating;
+cout << "Enter Your rating of this game ";
+cin >> rating;
+int *ptr;
+ptr= new int[rating];
+for(int i=0;i<rating;i++){
+
+    cout<< "Rating = ";
+cin>>ptr[i];
+}
+cout<<"rating is :" <<endl;
+for(int i=0;i<rating;i++){
+cout <<"Element:" << ptr[i] <<endl;
+}
+delete[] ptr;
 }
 
 void MainWindow::on_eButton_released()
@@ -89,8 +106,14 @@ void MainWindow::on_eButton_released()
 }
 
 
+template<typename T>
+void Print(T value){
+    std::cout << value << std::endl;
+}
+
 void MainWindow::on_wButton_released()
 {
+    Print<std::string>("You Have Moved West");
     moveToW("west");
 }
 

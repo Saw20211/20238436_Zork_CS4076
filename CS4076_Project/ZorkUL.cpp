@@ -26,30 +26,38 @@ ZorkUL::ZorkUL()
 inline void ZorkUL::createRooms()
 {
 
-    string name;
-    name = "bob";
+    string starR;
+    starR = "A. Starting Room";
     Room *a, *b, *c, *d, *e, *f, *g, *h, *i, *j;
 
-        a = new Room(name);
+        a = new Room(starR);
         rooms.push_back(*a);
 
-        b = new Room("b");
+        b = new Room("B. You are in the deep end Keep trying");
         rooms.push_back(*b);
-        c = new Room("c");
+
+        c = new Room("C. I can smell the elden ring");
         rooms.push_back(*c);
-        d = new Room("d");
+
+        d = new Room("D. I'm scared take me home");
         rooms.push_back(*d);
-        e = new Room("e");
+
+        e = new Room("E. Ah whats this!");
         rooms.push_back(*e);
-        f = new Room("f");
+
+        f = new Room("F. Theres a wall ahead");
         rooms.push_back(*f);
-        g = new Room("g");
+
+        g = new Room("G. I love this game!");
         rooms.push_back(*g);
-        h = new Room("h");
+
+        h = new Room("H. i am now lost *cries");
         rooms.push_back(*h);
-        i = new Room("i");
+
+        i = new Room("I. Ooo this place is lit");
         rooms.push_back(*i);
-        j = new Room("j");
+
+        j = new Room("J. No way ahead, I should go back...");
         rooms.push_back(*j);
 
 //             (North,  East,   South,  West)
@@ -64,7 +72,7 @@ inline void ZorkUL::createRooms()
             i->setExits(NULL, d, NULL, NULL);
             j->setExits(d, NULL, NULL, NULL);
 
-    currentRoom = a; // defualt room will be "a"
+    currentRoom = a; // starting room will be "a"
 }
 
 string ZorkUL::showMap()
@@ -101,8 +109,8 @@ string ZorkUL::welcomeMessage()
 // Function to display the instructions on how to use the controls
 string ZorkUL::printHelp(){
 
-    string output ="";
-    output += "Valid inputs are: ";
+    //string output ="";
+   // output += "Valid inputs are: ";
 
     return "The Goal of the game is to find the Elden Ring and become Elden Lord \n"
             "Move around the map and until you find the ring \n"
@@ -113,28 +121,24 @@ string ZorkUL::printHelp(){
 // Function for teleporting the player to a random room
 string ZorkUL::teleport()
 {
+    //needs more work,
     currentRoom = &rooms.at((int) rand() % rooms.size());
-        return currentRoom->longDescription() + "\n You are now trapped, the only way to get to another room is to use teleport \n";
+        return currentRoom->longDescription() +
+            "\n You are now trapped, the only way to get to another room is to use teleport \n";
 }
 
 
-// Function to list all of the items in a room
+//list items
 string ZorkUL::displayItems()
 {
     return currentRoom->displayItem();
 }
 
-// A getter to inform the player what room they are in when they enter a new room
-Room ZorkUL::getCurrentRoom()
-{
-    return liveRoom;
-}
 
-// Function for moving between the rooms, returns a message if there is no room in the direction selected
+//moving other room function
 string ZorkUL::goToRoom(string direction)
 {
     Room* nextRoom = currentRoom->nextRoom(direction);
-//in function returns null return error!
     if (nextRoom == NULL) {
         return "There is nothing in this room, turn back and continue your journey! ";
     } else {
@@ -144,3 +148,26 @@ string ZorkUL::goToRoom(string direction)
     }
 }
 
+// A get fucntion to tell the player the room they are currently in.
+Room ZorkUL::getCurrentRoom()
+{
+    return liveRoom;
+}
+
+/*
+ * void ZorkUL::teleport(string room){
+    if (room.compare("rand") == 0){
+        unsigned int roomSize = rooms.size();
+        unsigned int randRoom = rand() % roomSize;
+        currentRoom = rooms[randRoom];
+    }
+    else{
+        for (unsigned int i = 0; i < rooms.size(); i++)
+        {
+            if (rooms[i]->shortDescription().compare(room) == 0)
+                currentRoom = rooms[i];
+        }
+    }
+
+}
+ */

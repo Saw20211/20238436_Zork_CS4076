@@ -11,7 +11,6 @@ CONFIG += c++17
 SOURCES += \
     Command.cpp \
     CommandWords.cpp \
-    Dialogues.cpp \
     Parser.cpp \
     Room.cpp \
     ZorkUL.cpp \
@@ -24,7 +23,6 @@ SOURCES += \
 HEADERS += \
     Command.h \
     CommandWords.h \
-    Dialogues.h \
     Parser.h \
     Room.h \
     ZorkUL.h \

@@ -28,8 +28,7 @@ string Room::longDescription() {
 string Room::exitString() {
     string returnString = "\nexits =";
     for (map<string, Room*>::iterator i = exits.begin(); i != exits.end(); i++)
-        // Loop through map
-        returnString += "  " + i->first;	// access the "first" element of the pair (direction as a string)
+        returnString += "  " + i->first;
     return returnString;
 }
 
@@ -42,6 +41,7 @@ Room* Room::nextRoom(string direction) {
 }
 
 void Room::addItem(Item *inItem) {
+    //fix working item
     itemsInRoom.push_back(*inItem);
 }
 
@@ -49,7 +49,7 @@ string Room::displayItem() {
     string tempString = "items in room = ";
     int sizeItems = (itemsInRoom.size());
     if (itemsInRoom.size() < 1) {
-        tempString = "no items in room";
+        tempString = "Can't find any item here :(";
         }
     else if (itemsInRoom.size() > 0) {
        int x = (0);
