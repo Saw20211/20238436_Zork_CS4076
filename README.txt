@@ -18,7 +18,7 @@ Initializer List
 C++ References
 Pointers -> ZorkUl.cpp
 Inheritance -> animationGif.h, sceneImg.h
-Destructors
+Destructors -> Parser.cpp, Parser.h
 Memory management -> mainwindow.cpp
 Header files (inclusion guards)
 Arrays and pointers -> ZorkUL.cpp
