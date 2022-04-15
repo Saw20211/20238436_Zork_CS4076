@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/">
+        <file>title.png</file>
+        <file>map2.png</file>
+        <file>pixel.gif</file>
+        <file>../../../../Downloads/town.gif</file>
+    </qresource>
+</RCC>
